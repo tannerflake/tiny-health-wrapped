@@ -7,6 +7,9 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  /* Prevent layout shifts */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .banner-background {
@@ -35,6 +38,9 @@
   text-align: center;
   max-width: 600px;
   padding: 0 20px;
+  /* Smooth initial positioning */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .gift-icon {

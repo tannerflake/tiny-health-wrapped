@@ -27,11 +27,8 @@ const WrappedReadyBanner = ({ onStartWrapped }) => {
   const randomFlora = getRandomFlora();
 
   useEffect(() => {
-    // Stagger the animations
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 500);
-    return () => clearTimeout(timer);
+    // Show content immediately to prevent choppy movement
+    setShowContent(true);
   }, []);
 
   return (
