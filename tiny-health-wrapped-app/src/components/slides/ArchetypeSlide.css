@@ -322,6 +322,7 @@
 @media (max-width: 768px) {
   .slide-footer {
     padding-bottom: 60px; /* Much more bottom padding for mobile */
+    transform: translateY(-75px); /* Move button and URL up 75px on mobile */
   }
   
   .archetype-slide {
