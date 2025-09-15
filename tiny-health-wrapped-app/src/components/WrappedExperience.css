@@ -75,7 +75,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 40px 20px 20px 20px; /* Top padding for breadcrumbs */
   text-align: center;
   pointer-events: none; /* Allow clicks to pass through to click zones */
 }
@@ -107,6 +107,14 @@
 @media (hover: none) and (pointer: coarse) {
   .breadcrumb-line {
     height: 4px;
+  }
+  
+  .slide-content {
+    padding: 50px 20px 30px 20px; /* More top padding for mobile breadcrumbs, bottom padding for safe area */
+  }
+  
+  .wrapped-experience {
+    padding-bottom: env(safe-area-inset-bottom, 0px); /* Handle iPhone home indicator */
   }
 }
 
