@@ -42,16 +42,9 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
           <h2 className="slide-title">Your Microbiome Diversity</h2>
         </div>
         
-        <div className="percentile-visual">
-          <div className="percentile-circle">
-            <div className="circle-bg"></div>
-            <div className="circle-fill" style={{ '--percent': `${percentile}%` }}></div>
-            <div className="percentile-number">{percentile}</div>
-            <div className="percentile-label">percentile</div>
-          </div>
-        </div>
-        
         <div className="percentile-content">
+          <div className="percentile-number">{percentile}</div>
+          <div className="percentile-label">percentile</div>
           <h1 className="percentile-title">
             You're in the {percentile}th percentile for microbiome diversity
           </h1>

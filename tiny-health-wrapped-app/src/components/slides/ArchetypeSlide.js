@@ -40,9 +40,9 @@ const ArchetypeSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
           </div>
       
       <div className="slide-content">
-        <div className="slide-header">
-          <h2 className="slide-title">Me in 2023:</h2>
-        </div>
+            <div className="slide-header">
+              <h2 className="slide-title">Your Gut Identity...</h2>
+            </div>
         
         <div className="archetype-visual">
           <div className="archetype-icon">🧬</div>

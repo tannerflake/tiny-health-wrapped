@@ -55,62 +55,6 @@
   text-align: center;
 }
 
-.percentile-visual {
-  margin-bottom: 10px;
-  margin-top: -140px;
-  position: relative;
-}
-
-.percentile-circle {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.circle-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(255, 255, 255, 0.3) 0deg,
-    rgba(255, 255, 255, 0.3) 360deg
-  );
-  animation: rotate 20s linear infinite;
-}
-
-.circle-fill {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    var(--mint-green) 0deg,
-    var(--mint-green) calc(var(--percent) * 3.6deg),
-    rgba(255, 255, 255, 0.2) calc(var(--percent) * 3.6deg),
-    rgba(255, 255, 255, 0.2) 360deg
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .percentile-number {
   font-size: 48px;
@@ -118,6 +62,7 @@
   color: var(--dark-charcoal);
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
   margin-bottom: 0;
+  margin-top: 5px;
 }
 
 .percentile-label {
@@ -126,6 +71,7 @@
   opacity: 0.8;
   font-weight: 500;
   margin-top: 2px;
+  margin-bottom: 20px;
 }
 
 .percentile-content {
