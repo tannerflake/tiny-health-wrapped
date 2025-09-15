@@ -1,0 +1,189 @@
+.genres-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 3px, transparent 3px),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 3px, transparent 3px);
+  background-size: 40px 40px, 60px 60px;
+  animation: patternMove 15s linear infinite;
+}
+
+@keyframes patternMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+}
+
+.slide-header {
+  margin-bottom: 30px;
+}
+
+.slide-title {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.burger-visual {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.burger {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.bun {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D2691E, #CD853F);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-bun {
+  top: 0;
+  width: 180px;
+  height: 40px;
+  background: linear-gradient(135deg, #D2691E, #CD853F);
+}
+
+.bottom-bun {
+  bottom: 0;
+  width: 200px;
+  height: 50px;
+  background: linear-gradient(135deg, #CD853F, #D2691E);
+}
+
+.ingredient {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hip-hop {
+  top: 50px;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+}
+
+.reggaeton {
+  top: 75px;
+  background: linear-gradient(135deg, #4ECDC4, #6EDDD6);
+}
+
+.indie {
+  top: 100px;
+  background: linear-gradient(135deg, #45B7D1, #6BC5D8);
+}
+
+.pop {
+  top: 125px;
+  background: linear-gradient(135deg, #96CEB4, #A8D5BA);
+}
+
+.rap {
+  top: 150px;
+  background: linear-gradient(135deg, #FFEAA7, #FFF2CC);
+  color: var(--dark-gray);
+}
+
+.genres-content {
+  margin-bottom: 40px;
+}
+
+.genres-title {
+  color: var(--white);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slide-footer {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 15px;
+}
+
+.share-story-btn {
+  background: linear-gradient(135deg, var(--white), #F3F4F6);
+  color: var(--primary-purple);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.share-story-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}

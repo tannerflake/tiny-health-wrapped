@@ -1,0 +1,67 @@
+.demo-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--primary-purple), var(--light-purple));
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  padding: 12px 20px;
+  box-shadow: 0 -4px 20px rgba(107, 70, 193, 0.3);
+}
+
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner-text {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.whisper {
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.refresh-link {
+  background: none;
+  border: none;
+  color: var(--white);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.refresh-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .demo-banner {
+    padding: 10px 16px;
+  }
+  
+  .banner-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-banner {
+    padding: 8px 12px;
+  }
+  
+  .banner-text {
+    font-size: 12px;
+  }
+}
