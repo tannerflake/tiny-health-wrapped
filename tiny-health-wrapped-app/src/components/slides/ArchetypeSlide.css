@@ -321,22 +321,11 @@
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .slide-footer {
-    padding-bottom: 100px !important; /* Much more bottom padding for mobile */
+    padding-bottom: 60px; /* Much more bottom padding for mobile */
   }
   
   .archetype-slide {
-    padding-bottom: env(safe-area-inset-bottom, 80px) !important; /* Much more padding for mobile browsers */
-  }
-}
-
-/* Extra aggressive mobile padding for very small screens */
-@media (max-width: 480px) {
-  .slide-footer {
-    padding-bottom: 120px !important; /* Maximum bottom padding for small mobile screens */
-  }
-  
-  .archetype-slide {
-    padding-bottom: env(safe-area-inset-bottom, 100px) !important; /* Maximum padding for small screens */
+    padding-bottom: env(safe-area-inset-bottom, 40px); /* Handle iPhone home indicator with extra padding */
   }
 }
 
