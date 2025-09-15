@@ -110,11 +110,11 @@
   }
   
   .slide-content {
-    padding: 50px 20px 30px 20px; /* More top padding for mobile breadcrumbs, bottom padding for safe area */
+    padding: 50px 20px 80px 20px; /* More top padding for mobile breadcrumbs, much more bottom padding for safe area */
   }
   
   .wrapped-experience {
-    padding-bottom: env(safe-area-inset-bottom, 0px); /* Handle iPhone home indicator */
+    padding-bottom: env(safe-area-inset-bottom, 20px); /* Handle iPhone home indicator with extra padding */
   }
 }
 

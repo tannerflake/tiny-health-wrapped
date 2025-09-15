@@ -321,11 +321,11 @@
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .slide-footer {
-    padding-bottom: 30px; /* Extra bottom padding for mobile */
+    padding-bottom: 60px; /* Much more bottom padding for mobile */
   }
   
   .archetype-slide {
-    padding-bottom: env(safe-area-inset-bottom, 0px); /* Handle iPhone home indicator */
+    padding-bottom: env(safe-area-inset-bottom, 40px); /* Handle iPhone home indicator with extra padding */
   }
 }
 
