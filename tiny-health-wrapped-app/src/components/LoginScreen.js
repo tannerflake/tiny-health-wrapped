@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import './LoginScreen.css';
 
 const LoginScreen = ({ onLogin }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('FakeUserName101');
+  const [password, setPassword] = useState('Password');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {

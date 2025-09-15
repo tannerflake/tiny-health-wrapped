@@ -5,6 +5,27 @@ import './WrappedReadyBanner.css';
 const WrappedReadyBanner = ({ onStartWrapped }) => {
   const [showContent, setShowContent] = useState(false);
 
+  // Flora images for floating background
+  const floraImages = [
+    '/Individual flora images (web)/Blue 1.png',
+    '/Individual flora images (web)/Blue 2.png',
+    '/Individual flora images (web)/Green 1.png',
+    '/Individual flora images (web)/Green 2.png',
+    '/Individual flora images (web)/Green 3.png',
+    '/Individual flora images (web)/Red 1.png',
+    '/Individual flora images (web)/Red 2.png',
+    '/Individual flora images (web)/Red 3.png',
+    '/Individual flora images (web)/Yellow 1.png'
+  ];
+
+  // Generate random flora images for this screen
+  const getRandomFlora = () => {
+    const shuffled = [...floraImages].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 6); // Show 6 random flora images
+  };
+
+  const randomFlora = getRandomFlora();
+
   useEffect(() => {
     // Stagger the animations
     const timer = setTimeout(() => {
@@ -17,11 +38,12 @@ const WrappedReadyBanner = ({ onStartWrapped }) => {
     <div className="wrapped-banner">
       <div className="banner-background">
         <div className="bg-gradient"></div>
-        <div className="floating-particles">
-          {[...Array(20)].map((_, i) => (
-            <div key={i} className={`particle particle-${i + 1}`}></div>
-          ))}
-        </div>
+        {/* Random floating flora images */}
+        {randomFlora.map((flora, index) => (
+          <div key={index} className={`floating-flora flora-${index + 1}`}>
+            <img src={flora} alt="Flora" />
+          </div>
+        ))}
       </div>
 
       <div className="banner-content">

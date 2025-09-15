@@ -74,8 +74,8 @@
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
-    rgba(255, 255, 255, 0.2) 0deg,
-    rgba(255, 255, 255, 0.2) 360deg
+    rgba(255, 255, 255, 0.3) 0deg,
+    rgba(255, 255, 255, 0.3) 360deg
   );
   animation: rotate 20s linear infinite;
 }
@@ -89,10 +89,10 @@
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
-    #10B981 0deg,
-    #10B981 calc(var(--percent) * 3.6deg),
-    rgba(255, 255, 255, 0.1) calc(var(--percent) * 3.6deg),
-    rgba(255, 255, 255, 0.1) 360deg
+    var(--mint-green) 0deg,
+    var(--mint-green) calc(var(--percent) * 3.6deg),
+    rgba(255, 255, 255, 0.2) calc(var(--percent) * 3.6deg),
+    rgba(255, 255, 255, 0.2) 360deg
   );
   display: flex;
   align-items: center;
@@ -112,14 +112,14 @@
 .percentile-number {
   font-size: 48px;
   font-weight: 700;
-  color: var(--white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--dark-charcoal);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
   margin-bottom: 4px;
 }
 
 .percentile-label {
   font-size: 14px;
-  color: var(--white);
+  color: var(--dark-charcoal);
   opacity: 0.8;
   font-weight: 500;
 }
@@ -129,30 +129,32 @@
 }
 
 .percentile-title {
-  color: var(--white);
+  color: var(--dark-charcoal);
   font-size: 24px;
   font-weight: 700;
   margin: 0 0 16px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
   line-height: 1.3;
 }
 
 .percentile-description {
-  color: var(--white);
+  color: var(--dark-charcoal);
   font-size: 16px;
   line-height: 1.5;
-  opacity: 0.9;
+  opacity: 0.8;
   max-width: 300px;
   margin: 0;
 }
 
 .comparison-bar {
   width: 100%;
-  max-width: 280px;
+  max-width: 320px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .bar-label {
-  color: var(--white);
+  color: var(--dark-charcoal);
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 12px;
@@ -162,14 +164,15 @@
 .bar-container {
   position: relative;
   height: 8px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  overflow: hidden;
+  overflow: visible;
+  margin: 0 10px;
 }
 
 .bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #10B981, #34D399);
+  background: linear-gradient(90deg, var(--mint-green), var(--light-blue));
   border-radius: 4px;
   transition: width 1s ease-out;
 }
@@ -178,6 +181,7 @@
   position: absolute;
   top: -8px;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 .marker-dot {
@@ -191,7 +195,7 @@
 
 .marker-label {
   font-size: 12px;
-  color: var(--white);
+  color: var(--dark-charcoal);
   font-weight: 600;
   text-align: center;
 }

@@ -4,10 +4,6 @@ import './WrappedExperience.css';
 import ArchetypeSlide from './slides/ArchetypeSlide';
 import PercentileSlide from './slides/PercentileSlide';
 import KeyInsightSlide from './slides/KeyInsightSlide';
-import MinutesListenedSlide from './slides/MinutesListenedSlide';
-import TopGenresSlide from './slides/TopGenresSlide';
-import EvolutionSlide from './slides/EvolutionSlide';
-import RetestSlide from './slides/RetestSlide';
 import ShareSlide from './slides/ShareSlide';
 
 const WrappedExperience = ({ onBack, onComplete }) => {
@@ -20,24 +16,13 @@ const WrappedExperience = ({ onBack, onComplete }) => {
     archetypeDescription: "You've got high diversity, low inflammation, and a rare strain that sets you apart. You're the rare kombucha in a fridge full of colas.",
     diversityPercentile: 86,
     akkermansiaLevel: "High",
-    akkermansiaDescription: "This strain is linked to better glucose control and improved gut barrier function.",
-    minutesListened: 63901,
-    topGenres: ["Hip-Hop", "Reggaeton", "Alternative Indie", "Pop", "Rap"],
-    evolution: {
-      january: "After Hours Football Rap",
-      may: "Heatwave Beach Reggaeton",
-      october: "Pink Pilates Princess Strut Pop"
-    }
+    akkermansiaDescription: "This strain is linked to better glucose control and improved gut barrier function."
   };
 
   const slides = [
     { component: ArchetypeSlide, data: { archetype: userData.archetype, description: userData.archetypeDescription } },
     { component: PercentileSlide, data: { percentile: userData.diversityPercentile } },
     { component: KeyInsightSlide, data: { level: userData.akkermansiaLevel, description: userData.akkermansiaDescription } },
-    { component: MinutesListenedSlide, data: { minutes: userData.minutesListened } },
-    { component: TopGenresSlide, data: { genres: userData.topGenres } },
-    { component: EvolutionSlide, data: { evolution: userData.evolution } },
-    { component: RetestSlide, data: { name: userData.name } },
     { component: ShareSlide, data: { name: userData.name } }
   ];
 
@@ -90,15 +75,24 @@ const WrappedExperience = ({ onBack, onComplete }) => {
           ))}
         </div>
 
-        {/* Left Navigation Arrow */}
-        {currentSlide > 0 && (
-          <button className="nav-arrow nav-arrow-left" onClick={handlePrevious}>
-            ←
-          </button>
-        )}
-
-        {/* Slide Content */}
-        <div className="slide-container" onClick={handleNext}>
+        {/* Slide Content with Click Zones */}
+        <div className="slide-container">
+          {/* Left Click Zone (40%) - Go Back */}
+          {currentSlide > 0 && (
+            <div 
+              className="click-zone click-zone-left" 
+              onClick={handlePrevious}
+              title="Go back"
+            />
+          )}
+          
+          {/* Right Click Zone (60%) - Go Forward */}
+          <div 
+            className="click-zone click-zone-right" 
+            onClick={handleNext}
+            title="Continue"
+          />
+          
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -118,13 +112,6 @@ const WrappedExperience = ({ onBack, onComplete }) => {
             </motion.div>
           </AnimatePresence>
         </div>
-
-        {/* Right Navigation Arrow */}
-        {currentSlide < slides.length - 1 && (
-          <button className="nav-arrow nav-arrow-right" onClick={handleNext}>
-            →
-          </button>
-        )}
       </div>
     </div>
   );
