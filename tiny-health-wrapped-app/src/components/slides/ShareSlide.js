@@ -28,11 +28,21 @@ const ShareSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
     <div className="share-slide">
       <div className="slide-background">
         <div className="background-celebration">
-          <div className="confetti confetti-1">🎉</div>
-          <div className="confetti confetti-2">🎊</div>
-          <div className="confetti confetti-3">✨</div>
-          <div className="confetti confetti-4">🌟</div>
-          <div className="confetti confetti-5">🎈</div>
+          <div className="confetti confetti-1">
+            <img src="/Individual flora images (web)/Red 1.png" alt="Flora" />
+          </div>
+          <div className="confetti confetti-2">
+            <img src="/Individual flora images (web)/Green 2.png" alt="Flora" />
+          </div>
+          <div className="confetti confetti-3">
+            <img src="/Individual flora images (web)/Blue 1.png" alt="Flora" />
+          </div>
+          <div className="confetti confetti-4">
+            <img src="/Individual flora images (web)/Yellow 1.png" alt="Flora" />
+          </div>
+          <div className="confetti confetti-5">
+            <img src="/Individual flora images (web)/Red 2.png" alt="Flora" />
+          </div>
         </div>
       </div>
       
@@ -42,11 +52,12 @@ const ShareSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
         </div>
         
         <div className="share-visual">
-          <div className="share-icon">📱</div>
           <div className="share-phone">
             <div className="phone-screen">
               <div className="phone-content">
-                <div className="phone-brand">🧬</div>
+                <div className="phone-brand">
+                  <img src="/Instagram_logo_2016.svg.webp" alt="Instagram" />
+                </div>
                 <div className="phone-text">My Gut Health Wrapped</div>
               </div>
             </div>
@@ -58,14 +69,13 @@ const ShareSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
             Share your story with friends
           </h1>
           <p className="share-description">
-            Download your personalized gut health summary and share it on social media to inspire others to take care of their microbiome.
+            Download your personalized gut health summary and show off your gut health on social media!
           </p>
         </div>
         
         <div className="share-actions">
           <button className="cta-btn primary" onClick={onNext}>
-            <span>🔬</span>
-            <span>Let's dive deeper into your results!</span>
+            <span>Let's go!</span>
           </button>
         </div>
       </div>

@@ -28,8 +28,14 @@
 
 .confetti {
   position: absolute;
-  font-size: 20px;
   animation: confettiFall 4s ease-in-out infinite;
+}
+
+.confetti img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: brightness(1.2) saturate(1.1);
 }
 
 .confetti-1 {
@@ -102,11 +108,6 @@
   position: relative;
 }
 
-.share-icon {
-  font-size: 60px;
-  margin-bottom: 20px;
-  animation: bounce 2s ease-in-out infinite;
-}
 
 @keyframes bounce {
   0%, 100% {
@@ -156,8 +157,14 @@
 }
 
 .phone-brand {
-  font-size: 24px;
   margin-bottom: 8px;
+}
+
+.phone-brand img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .phone-text {

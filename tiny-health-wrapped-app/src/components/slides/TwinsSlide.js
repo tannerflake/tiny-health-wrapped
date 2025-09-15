@@ -1,9 +1,7 @@
 import React from 'react';
-import './PercentileSlide.css';
+import './TwinsSlide.css';
 
-const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
-  const { percentile } = data;
-
+const TwinsSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   // Flora images for floating background
   const floraImages = [
     '/Individual flora images (web)/Blue 1.png',
@@ -26,7 +24,7 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   const randomFlora = getRandomFlora();
 
   return (
-    <div className="percentile-slide">
+    <div className="twins-slide">
       <div className="slide-background">
         <div className="background-gradient"></div>
         {/* Random floating flora images */}
@@ -39,37 +37,34 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
       
       <div className="slide-content">
         <div className="slide-header">
-          <h2 className="slide-title">Your Microbiome Diversity</h2>
+          <h2 className="slide-title">You're Gut Twins With…</h2>
         </div>
         
-        <div className="percentile-content">
-          <div className="percentile-number">{percentile}th</div>
-          <div className="percentile-label">percentile</div>
-          <h1 className="percentile-title">
-            You're in the {percentile}th percentile for microbiome diversity
+        <div className="twins-visual">
+          <div className="twins-icon">👯</div>
+        </div>
+        
+        <div className="twins-content">
+          <h1 className="twins-header">
+            You're microbiome twins with 6.2% of other Tiny Health users
           </h1>
-          <p className="percentile-description">
-            Your gut microbiome shows excellent diversity, which is associated with better overall health and resilience.
+          <h3 className="twins-subheader">
+            Your gut is in good company
+          </h3>
+          <p className="twins-description">
+            Users with similar profiles tend to report better mood, fewer cravings, and less bloating. You're in a great spot to optimize further.
           </p>
-        </div>
-        
-        <div className="comparison-bar">
-          <div className="bar-label">vs. other Tiny Health users</div>
-          <div className="bar-container">
-            <div className="bar-fill" style={{ width: `${percentile}%` }}></div>
-            <div className="bar-marker" style={{ left: `${percentile}%` }}>
-              <div className="marker-dot"></div>
-              <div className="marker-label">You</div>
-            </div>
+          <div className="tagline">
+            Your gut is part of a bigger community.
           </div>
         </div>
       </div>
       
       <div className="slide-footer">
-              <button className="share-story-btn">
-                <span>📤</span>
-                <span>Share your results</span>
-              </button>
+        <button className="share-story-btn">
+          <span>📤</span>
+          <span>Share your results</span>
+        </button>
         <div className="branding">
           <span className="brand-text">tinyhealth.com</span>
         </div>
@@ -78,4 +73,4 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   );
 };
 
-export default PercentileSlide;
+export default TwinsSlide;

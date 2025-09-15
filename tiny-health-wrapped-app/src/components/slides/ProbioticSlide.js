@@ -1,9 +1,7 @@
 import React from 'react';
-import './PercentileSlide.css';
+import './ProbioticSlide.css';
 
-const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
-  const { percentile } = data;
-
+const ProbioticSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   // Flora images for floating background
   const floraImages = [
     '/Individual flora images (web)/Blue 1.png',
@@ -26,7 +24,7 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   const randomFlora = getRandomFlora();
 
   return (
-    <div className="percentile-slide">
+    <div className="probiotic-slide">
       <div className="slide-background">
         <div className="background-gradient"></div>
         {/* Random floating flora images */}
@@ -39,37 +37,32 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
       
       <div className="slide-content">
         <div className="slide-header">
-          <h2 className="slide-title">Your Microbiome Diversity</h2>
+          <h2 className="slide-title">Probiotic Scorecard</h2>
         </div>
         
-        <div className="percentile-content">
-          <div className="percentile-number">{percentile}th</div>
-          <div className="percentile-label">percentile</div>
-          <h1 className="percentile-title">
-            You're in the {percentile}th percentile for microbiome diversity
+        <div className="probiotic-visual">
+          <div className="probiotic-icon">🦠</div>
+        </div>
+        
+        <div className="probiotic-content">
+          <h1 className="probiotic-header">
+            You're Low in Key Probiotics
           </h1>
-          <p className="percentile-description">
-            Your gut microbiome shows excellent diversity, which is associated with better overall health and resilience.
+          <h3 className="probiotic-subheader">
+            Your levels of Lactobacillus and Bifidobacterium are low
+          </h3>
+          <p className="probiotic-description">
+            These strains are foundational for gut health — they help produce SCFAs and regulate the immune system. Consider foods like kefir, yogurt, and kimchi to naturally increase your levels.
           </p>
         </div>
         
-        <div className="comparison-bar">
-          <div className="bar-label">vs. other Tiny Health users</div>
-          <div className="bar-container">
-            <div className="bar-fill" style={{ width: `${percentile}%` }}></div>
-            <div className="bar-marker" style={{ left: `${percentile}%` }}>
-              <div className="marker-dot"></div>
-              <div className="marker-label">You</div>
-            </div>
-          </div>
-        </div>
       </div>
       
       <div className="slide-footer">
-              <button className="share-story-btn">
-                <span>📤</span>
-                <span>Share your results</span>
-              </button>
+        <button className="share-story-btn">
+          <span>📤</span>
+          <span>Share your results</span>
+        </button>
         <div className="branding">
           <span className="brand-text">tinyhealth.com</span>
         </div>
@@ -78,4 +71,4 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   );
 };
 
-export default PercentileSlide;
+export default ProbioticSlide;

@@ -4,6 +4,12 @@ import './WrappedExperience.css';
 import ArchetypeSlide from './slides/ArchetypeSlide';
 import PercentileSlide from './slides/PercentileSlide';
 import KeyInsightSlide from './slides/KeyInsightSlide';
+import GutGoalSlide from './slides/GutGoalSlide';
+import OvergrowthSlide from './slides/OvergrowthSlide';
+import GutGuardSlide from './slides/GutGuardSlide';
+import InflammationSlide from './slides/InflammationSlide';
+import ProbioticSlide from './slides/ProbioticSlide';
+import TwinsSlide from './slides/TwinsSlide';
 import ShareSlide from './slides/ShareSlide';
 
 const WrappedExperience = ({ onBack, onComplete }) => {
@@ -12,8 +18,8 @@ const WrappedExperience = ({ onBack, onComplete }) => {
   // Sample data for the wrapped experience
   const userData = {
     name: "Madeline",
-    archetype: "The Symbiotic Stoic",
-    archetypeDescription: "You've got high diversity, low inflammation, and a rare strain that sets you apart. You're the rare kombucha in a fridge full of colas.",
+    archetype: "The Fermentation Front-Runner",
+    archetypeDescription: "Your gut is loaded with fermenters like Faecalibacterium and Roseburia, producing high levels of short-chain fatty acids — the VIP fuel for your gut lining. You also respond especially well to prebiotics, meaning fibers don't just pass through — they power up your ecosystem.\n\nYou're not just well-fed — your gut is in gear and taking the lead.",
     diversityPercentile: 86,
     akkermansiaLevel: "High",
     akkermansiaDescription: "This strain is linked to better glucose control and improved gut barrier function."
@@ -23,6 +29,12 @@ const WrappedExperience = ({ onBack, onComplete }) => {
     { component: ArchetypeSlide, data: { archetype: userData.archetype, description: userData.archetypeDescription } },
     { component: PercentileSlide, data: { percentile: userData.diversityPercentile } },
     { component: KeyInsightSlide, data: { level: userData.akkermansiaLevel, description: userData.akkermansiaDescription } },
+    { component: GutGoalSlide, data: {} },
+    { component: OvergrowthSlide, data: {} },
+    { component: GutGuardSlide, data: {} },
+    { component: InflammationSlide, data: {} },
+    { component: ProbioticSlide, data: {} },
+    { component: TwinsSlide, data: {} },
     { component: ShareSlide, data: { name: userData.name } }
   ];
 

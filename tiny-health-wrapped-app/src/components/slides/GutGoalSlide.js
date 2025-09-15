@@ -1,9 +1,7 @@
 import React from 'react';
-import './PercentileSlide.css';
+import './GutGoalSlide.css';
 
-const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
-  const { percentile } = data;
-
+const GutGoalSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   // Flora images for floating background
   const floraImages = [
     '/Individual flora images (web)/Blue 1.png',
@@ -26,7 +24,7 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   const randomFlora = getRandomFlora();
 
   return (
-    <div className="percentile-slide">
+    <div className="gut-goal-slide">
       <div className="slide-background">
         <div className="background-gradient"></div>
         {/* Random floating flora images */}
@@ -39,37 +37,37 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
       
       <div className="slide-content">
         <div className="slide-header">
-          <h2 className="slide-title">Your Microbiome Diversity</h2>
+          <h2 className="slide-title">Your Gut Goal for 2025</h2>
         </div>
         
-        <div className="percentile-content">
-          <div className="percentile-number">{percentile}th</div>
-          <div className="percentile-label">percentile</div>
-          <h1 className="percentile-title">
-            You're in the {percentile}th percentile for microbiome diversity
+        <div className="goal-visual">
+          <div className="goal-icon">🎯</div>
+        </div>
+        
+        <div className="goal-content">
+          <h1 className="goal-subheader">
+            Balance your short-chain fatty acids (SCFAs)
           </h1>
-          <p className="percentile-description">
-            Your gut microbiome shows excellent diversity, which is associated with better overall health and resilience.
+          <p className="goal-description">
+            Your SCFAs are a bit low — and these are crucial for gut lining integrity, mood regulation, and energy production.
+          </p>
+          <p className="goal-description">
+            Focus on adding prebiotic fibers to your diet (think: garlic, onions, oats) and check back in 6 months to track improvement.
           </p>
         </div>
         
-        <div className="comparison-bar">
-          <div className="bar-label">vs. other Tiny Health users</div>
-          <div className="bar-container">
-            <div className="bar-fill" style={{ width: `${percentile}%` }}></div>
-            <div className="bar-marker" style={{ left: `${percentile}%` }}>
-              <div className="marker-dot"></div>
-              <div className="marker-label">You</div>
-            </div>
-          </div>
+        <div className="goal-actions">
+          <button className="cta-btn primary" onClick={onNext}>
+            <span>Sign up for Tiny+ for Adults to get a discount on your next test!</span>
+          </button>
         </div>
       </div>
       
       <div className="slide-footer">
-              <button className="share-story-btn">
-                <span>📤</span>
-                <span>Share your results</span>
-              </button>
+        <button className="share-story-btn">
+          <span>📤</span>
+          <span>Share your results</span>
+        </button>
         <div className="branding">
           <span className="brand-text">tinyhealth.com</span>
         </div>
@@ -78,4 +76,4 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   );
 };
 
-export default PercentileSlide;
+export default GutGoalSlide;

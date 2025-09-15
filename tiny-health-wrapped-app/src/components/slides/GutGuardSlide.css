@@ -1,8 +1,8 @@
-.percentile-slide {
+.gut-guard-slide {
   width: 100%;
   height: 100%;
   position: relative;
-  background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--peach) 100%);
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--lavender-accent) 50%, var(--mint-green) 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,7 +27,6 @@
   background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
               radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
 }
-
 
 .slide-content {
   position: relative;
@@ -55,119 +54,89 @@
   text-align: center;
 }
 
-
-.percentile-number {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--dark-charcoal);
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
-  margin-bottom: 0;
-  margin-top: 5px;
-  background: linear-gradient(135deg, var(--bright-white), var(--soft-cream));
-  padding: 12px 24px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: inline-block;
+.guard-visual {
+  margin-bottom: 30px;
+  position: relative;
 }
 
-.percentile-label {
-  font-size: 14px;
-  color: var(--dark-charcoal);
-  opacity: 0.8;
-  font-weight: 500;
-  margin-top: 2px;
+.guard-icon {
+  font-size: 80px;
   margin-bottom: 20px;
 }
 
-.percentile-content {
+.guard-content {
   margin-bottom: 40px;
   text-align: center;
 }
 
-.percentile-title {
+.guard-header {
   color: var(--dark-charcoal);
   font-size: 24px;
   font-weight: 700;
   margin: 0 0 16px 0;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
   line-height: 1.3;
   text-align: center;
 }
 
-.percentile-description {
+.guard-subheader {
+  color: var(--dark-charcoal);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.guard-description {
   color: var(--dark-charcoal);
   font-size: 16px;
   line-height: 1.5;
   opacity: 0.8;
   max-width: 300px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   text-align: center;
   display: block;
 }
 
-.comparison-bar {
-  width: 100%;
-  max-width: 320px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.bar-label {
+.insight-tip {
   color: var(--dark-charcoal);
   font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 12px;
-  opacity: 0.8;
-}
-
-.bar-container {
-  position: relative;
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  overflow: visible;
-  margin: 0 10px;
-}
-
-.bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--mint-green), var(--light-blue));
-  border-radius: 4px;
-  transition: width 1s ease-out;
-}
-
-.bar-marker {
-  position: absolute;
-  top: -8px;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.marker-dot {
-  width: 16px;
-  height: 16px;
-  background-color: var(--primary-purple);
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  margin: 0 auto 4px;
-}
-
-.marker-label {
-  font-size: 12px;
-  color: var(--dark-charcoal);
   font-weight: 600;
+  font-style: italic;
+  opacity: 0.9;
   text-align: center;
 }
 
 .slide-footer {
   position: relative;
   z-index: 2;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
+}
+
+.share-story-btn {
+  background: linear-gradient(135deg, var(--bright-white), var(--soft-cream));
+  color: var(--dark-charcoal);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.share-story-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .branding {
@@ -175,16 +144,10 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: var(--white);
+  color: var(--dark-charcoal);
   opacity: 0.7;
   font-size: 12px;
   font-weight: 500;
-}
-
-.brand-logo {
-  height: 16px;
-  width: auto;
-  object-fit: contain;
 }
 
 /* Floating Flora Images */
@@ -266,10 +229,11 @@
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .slide-footer {
-    padding-bottom: 60px; /* Much more bottom padding for mobile */
+    padding-bottom: 60px;
+    transform: translateY(-75px);
   }
   
-  .percentile-slide {
-    padding-bottom: env(safe-area-inset-bottom, 40px); /* Handle iPhone home indicator with extra padding */
+  .gut-guard-slide {
+    padding-bottom: env(safe-area-inset-bottom, 40px);
   }
 }

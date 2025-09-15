@@ -1,9 +1,7 @@
 import React from 'react';
-import './PercentileSlide.css';
+import './OvergrowthSlide.css';
 
-const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
-  const { percentile } = data;
-
+const OvergrowthSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   // Flora images for floating background
   const floraImages = [
     '/Individual flora images (web)/Blue 1.png',
@@ -26,7 +24,7 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   const randomFlora = getRandomFlora();
 
   return (
-    <div className="percentile-slide">
+    <div className="overgrowth-slide">
       <div className="slide-background">
         <div className="background-gradient"></div>
         {/* Random floating flora images */}
@@ -39,37 +37,34 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
       
       <div className="slide-content">
         <div className="slide-header">
-          <h2 className="slide-title">Your Microbiome Diversity</h2>
+          <h2 className="slide-title">The Overgrowth Radar</h2>
         </div>
         
-        <div className="percentile-content">
-          <div className="percentile-number">{percentile}th</div>
-          <div className="percentile-label">percentile</div>
-          <h1 className="percentile-title">
-            You're in the {percentile}th percentile for microbiome diversity
+        <div className="overgrowth-visual">
+          <div className="overgrowth-icon">🌈</div>
+        </div>
+        
+        <div className="overgrowth-content">
+          <h1 className="overgrowth-header">
+            One strain is dominating…
           </h1>
-          <p className="percentile-description">
-            Your gut microbiome shows excellent diversity, which is associated with better overall health and resilience.
+          <h3 className="overgrowth-subheader">
+            Your Bacteroides levels are unusually high
+          </h3>
+          <p className="overgrowth-description">
+            When one bacteria species overgrows, it can throw off your gut balance. Right now, your levels of Bacteroides are higher than 92% of other users. This could be linked to stress, high animal protein intake, or low fiber.
           </p>
-        </div>
-        
-        <div className="comparison-bar">
-          <div className="bar-label">vs. other Tiny Health users</div>
-          <div className="bar-container">
-            <div className="bar-fill" style={{ width: `${percentile}%` }}></div>
-            <div className="bar-marker" style={{ left: `${percentile}%` }}>
-              <div className="marker-dot"></div>
-              <div className="marker-label">You</div>
-            </div>
+          <div className="tagline">
+            Balance is the name of the gut game.
           </div>
         </div>
       </div>
       
       <div className="slide-footer">
-              <button className="share-story-btn">
-                <span>📤</span>
-                <span>Share your results</span>
-              </button>
+        <button className="share-story-btn">
+          <span>📤</span>
+          <span>Share your results</span>
+        </button>
         <div className="branding">
           <span className="brand-text">tinyhealth.com</span>
         </div>
@@ -78,4 +73,4 @@ const PercentileSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   );
 };
 
-export default PercentileSlide;
+export default OvergrowthSlide;
