@@ -53,6 +53,31 @@ const WrappedExperience = ({ onBack, onComplete }) => {
     }
   };
 
+  const handleSlideClick = (event) => {
+    // Don't advance if clicking on a button or interactive element
+    if (event.target.tagName === 'BUTTON' || 
+        event.target.closest('button') || 
+        event.target.closest('a') ||
+        event.target.closest('input') ||
+        event.target.closest('select') ||
+        event.target.closest('textarea')) {
+      return;
+    }
+
+    // Determine if click is on left or right side
+    const rect = event.currentTarget.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const slideWidth = rect.width;
+    
+    if (clickX < slideWidth * 0.4 && currentSlide > 0) {
+      // Left 40% - go back
+      handlePrevious();
+    } else {
+      // Right 60% - go forward
+      handleNext();
+    }
+  };
+
   const handleKeyPress = (e) => {
     if (e.key === 'ArrowRight' || e.key === ' ') {
       e.preventDefault();
@@ -87,24 +112,8 @@ const WrappedExperience = ({ onBack, onComplete }) => {
           ))}
         </div>
 
-        {/* Slide Content with Click Zones */}
+        {/* Slide Content with Click Handler */}
         <div className="slide-container">
-          {/* Left Click Zone (40%) - Go Back */}
-          {currentSlide > 0 && (
-            <div 
-              className="click-zone click-zone-left" 
-              onClick={handlePrevious}
-              title="Go back"
-            />
-          )}
-          
-          {/* Right Click Zone (60%) - Go Forward */}
-          <div 
-            className="click-zone click-zone-right" 
-            onClick={handleNext}
-            title="Continue"
-          />
-          
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -113,6 +122,7 @@ const WrappedExperience = ({ onBack, onComplete }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
               className="slide-content"
+              onClick={handleSlideClick}
             >
               <CurrentSlideComponent 
                 data={slideData} 

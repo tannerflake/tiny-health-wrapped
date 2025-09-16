@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { downloadAllSlides, copyLink } from '../../utils/downloadSlides';
 import './GutGoalSlide.css';
 
 const GutGoalSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
+  const [showToast, setShowToast] = useState(false);
+  
   // Flora images for floating background
   const floraImages = [
     '/Individual flora images (web)/Blue 1.png',
@@ -22,6 +25,16 @@ const GutGoalSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
   };
 
   const randomFlora = getRandomFlora();
+
+  const handleTinyPlusClick = () => {
+    window.open('https://www.tinyhealth.com/memberships/tiny-adult-membership', '_blank');
+  };
+
+  const handleShareClick = async () => {
+    console.log('Share button clicked, starting download...');
+    await downloadAllSlides(setShowToast);
+    console.log('Download completed, toast should show');
+  };
 
   return (
     <div className="gut-goal-slide">
@@ -57,14 +70,14 @@ const GutGoalSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
         </div>
         
         <div className="goal-actions">
-          <button className="cta-btn primary" onClick={onNext}>
+          <button className="cta-btn primary" onClick={handleTinyPlusClick}>
             <span>Sign up for Tiny+ for Adults to get a discount on your next test!</span>
           </button>
         </div>
       </div>
       
       <div className="slide-footer">
-        <button className="share-story-btn">
+        <button className="share-story-btn" onClick={handleShareClick}>
           <span>📤</span>
           <span>Share your results</span>
         </button>
@@ -72,6 +85,13 @@ const GutGoalSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
           <span className="brand-text">tinyhealth.com</span>
         </div>
       </div>
+      
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="toast-notification">
+          <span>Downloaded!</span>
+        </div>
+      )}
     </div>
   );
 };

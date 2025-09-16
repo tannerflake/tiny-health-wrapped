@@ -58,13 +58,6 @@ const KeyInsightSlide = ({ data, onNext, onPrevious, isFirst, isLast }) => {
         
         <div className="insight-details">
           <div className="detail-card">
-            <div className="detail-icon">💪</div>
-            <div className="detail-text">
-              <h3>Gut Barrier</h3>
-              <p>Strengthens intestinal lining</p>
-            </div>
-          </div>
-          <div className="detail-card">
             <div className="detail-icon">🍯</div>
             <div className="detail-text">
               <h3>Glucose Control</h3>

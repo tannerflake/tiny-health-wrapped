@@ -77,28 +77,25 @@
   align-items: center;
   padding: 40px 20px 20px 20px; /* Top padding for breadcrumbs */
   text-align: center;
-  pointer-events: none; /* Allow clicks to pass through to click zones */
-}
-
-/* Click Zones */
-.click-zone {
-  position: absolute;
-  top: 0;
-  height: 100%;
+  position: relative;
   z-index: 10;
   cursor: pointer;
 }
 
-.click-zone-left {
-  left: 0;
-  width: 40%;
-  background: transparent;
+/* Ensure all interactive elements are above click zones */
+.slide-content button,
+.slide-content a,
+.slide-content input,
+.slide-content select,
+.slide-content textarea {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 20 !important;
 }
 
-.click-zone-right {
-  right: 0;
-  width: 60%;
-  background: transparent;
+/* Click Zones - Disabled to prevent button interference */
+.click-zone {
+  display: none;
 }
 
 
